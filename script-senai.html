@@ -3,10 +3,10 @@
     let saldo = 0;
 
     do {
-        saldo = parseInt(prompt("Informe o saldo inicial:"));
+        saldo = parseInt(prompt("Informe o saldo inicial"));
 
         if (isNaN(saldo)) {
-            alert("Por favor, digite apenas numeros inteiros");
+            alert("Por favor, digite apenas números inteiros");
         }
     } while (isNaN(saldo))
 
@@ -20,7 +20,7 @@
             quantidade = parseInt(prompt("informe quantidade de produto pra compra ou venda."));
 
             if (isNaN(quantidade)) {
-                alert("Por favor, digite apenas numeros inteiros");
+                alert("Por favor, digite apenas números inteiros");
             }
         } while (isNaN(quantidade))
 
@@ -28,22 +28,24 @@
         switch (tipoEntrada) {
             case 1:
                 saldo = saldo + quantidade;
-                document.writeln("entrada de produto" + quantidade + "<br>");
+                document.writeln("entrada de produto: " + quantidade + "<br>");
                 break;
             case 2:
                 if (quantidade <= saldo) {
                     saldo = saldo - quantidade;
-                    document.writeln("saida de produto" + quantidade + "<br>");
+                    document.writeln("saida de produto: " + quantidade + "<br>");
                 } else {
-                    document.writeln("saldo insufuciente" + "<br>");
-                    alert("saldo insufuciente");
+                    document.writeln("saldo insuficiente" + "<br>");
+                    alert("saldo insuficiente");
                 }
                 break;
             default:
                 document.writeln("tipo de entrada não existe" + "<br>");
                 alert("tipo de entrada não existe");
         }
+
         document.writeln("saldo atual: " + saldo + "<br>");
+        
         do {
             resposta = prompt("Deseja encerrar o sistema? (s/n)").toLowerCase().trim();
 
@@ -55,7 +57,7 @@
         if (resposta === "s") {
             sistemaAtivo = false;
             document.writeln("sistema encerrado" + "<br>");
-            alert("saldo encerrado");
+            alert("sistema encerrado");
         }
     }
 
